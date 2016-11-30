@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - learn@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="learn">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="test"/>
+    <table id="6" parent="1" name="students"/>
+    <table id="7" parent="1" name="users"/>
+    <column id="8" parent="6" name="sid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="9" parent="6" name="sname">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="10" parent="6" name="address">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="11" parent="6" name="gender">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="12" parent="6" name="birthday">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="13" parent="6" name="PRIMARY">
+      <columns>sid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="14" parent="7" name="uid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="15" parent="7" name="username">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="16" parent="7" name="password">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="17" parent="7" name="PRIMARY">
+      <columns>uid</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

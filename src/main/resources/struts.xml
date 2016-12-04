@@ -17,6 +17,8 @@
 
     <!--<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>-->
 
+
+    <!--strict-method-invocation="false" 2.5之后为了安全和减轻系统负担，默认开启true方法检验，如果系统自定义方法需要放在<allowed-methods>声明，或者关闭它false-->
     <package name="users" extends="parent" namespace="/users" strict-method-invocation="false">
         <!--{1}{2}代表占位符 第一个星号和第二个星号的占位符-->
         <action name="*_*" class="action.{1}Action" method="{2}">

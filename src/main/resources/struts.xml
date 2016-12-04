@@ -17,14 +17,13 @@
 
     <!--<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>-->
 
-    <package name="users" extends="parent" namespace="/users">
+    <package name="users" extends="parent" namespace="/users" strict-method-invocation="false">
         <!--{1}{2}代表占位符 第一个星号和第二个星号的占位符-->
         <action name="*_*" class="action.{1}Action" method="{2}">
             <result name="success">/users/Users_login_success.jsp</result>
             <result name="login">/users/Users_login.jsp</result>
+            <!--<allowed-methods>login</allowed-methods>-->
         </action>
-
-
     </package>
 
 </struts>

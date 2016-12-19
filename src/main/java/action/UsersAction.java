@@ -23,10 +23,13 @@ public class UsersAction extends SuperAction implements ModelDriven<Users> {
 
         System.out.println("usersaction 执行");
         UsersDao dao = new UsersDaoImpl();
-        if (dao.usersLogin(users))
+        if (dao.usersLogin(users)) {
+            session.setAttribute("userName", users.getUsername());
             return SUCCESS;
-        else
+        } else{
             return LOGIN;
+        }
+
     }
 
     public Users getModel() {

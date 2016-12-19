@@ -6,13 +6,13 @@ import java.util.Date;
  * Created by hign on 2016/11/30.
  */
 public class Students {
-    private int sid;
+    private String sid;
     private String sname;
-    private  String gender;
+    private String gender;
     private Date birthday;
-    private  String address;
+    private String address;
 
-    public Students(int sid, String sname, String gender, Date birthday, String address) {
+    public Students(String sid, String sname, String gender, Date birthday, String address) {
         this.sid = sid;
         this.sname = sname;
         this.gender = gender;
@@ -23,11 +23,11 @@ public class Students {
     public Students() {
     }
 
-    public int getSid() {
+    public String getSid() {
         return sid;
     }
 
-    public void setSid(int sid) {
+    public void setSid(String sid) {
         this.sid = sid;
     }
 
@@ -65,7 +65,7 @@ public class Students {
 
     @Override
     public String toString() {
-        return "Students{" +
+        return "StudentsDao{" +
                 "sid=" + sid +
                 ", sname='" + sname + '\'' +
                 ", gender='" + gender + '\'' +

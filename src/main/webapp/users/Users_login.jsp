@@ -250,11 +250,11 @@ body{
 					</div>
 					<div id="user-name">
 						<span class="item">用户名:</span>
-						<span><input type="text" name="username" class="form-input"></span>
+						<span><input type="text" name="username" class="form-input" value="zhangsan"></span>
 					</div>
 					<div id="user-password">
 						<span class="item">密&nbsp;&nbsp;&nbsp;码:</span>
-						<span class="input"><input type="password" name="password" class="form-input"></span>
+						<span class="input"><input type="password" name="password" class="form-input" value="123456"></span>
 					</div>
 					<div id="button-group">
 						<input type="submit" class="btn" value="登录"/>

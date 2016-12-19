@@ -1,5 +1,9 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -111,9 +115,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<td>地址</td>
 		<td>操作</td>
 	</tr>
-	
+
+
 	<!-- 遍历开始 -->
-	<s:iterator value="#session.students_list" var="stu">
+
+	<s:iterator value="#session.students" var="stu">
 	<tr class="list">
 		<td><s:property value="#stu.sid"/></td>
 		<td><a href="<%=path%>/students/Students_modify.action?sid=<s:property value="#stu.sid"/>"><s:property value="#stu.sname"/></a></td>

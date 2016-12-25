@@ -17,12 +17,18 @@ import java.util.List;
  */
 public class StudentDaoImplTest {
     @Test
-    public void queryAllStudents() {
+    public void testQueryAllStudents() {
         StudentsDao dap = new StudentsDaoImpl();
         List<Students> allStudents = dap.queryAllStudents();
 
         for (Students s : allStudents) {
             System.out.println(s.toString());
         }
+    }
+
+    @Test
+    public void testGetNewId(){
+        StudentsDao dap=new StudentsDaoImpl();
+        System.out.println(dap.getNewSid());
     }
 }

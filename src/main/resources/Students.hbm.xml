@@ -7,7 +7,7 @@
 <hibernate-mapping>
     <class name="bean.Students">
 
-        <id name="sid" type="string">
+        <id name="sid" type="java.lang.String">
         </id>
         <property name="sname" type="java.lang.String"></property>
         <property name="address" type="java.lang.String"></property>

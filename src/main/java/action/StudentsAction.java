@@ -4,6 +4,9 @@ import bean.Students;
 import service.StudentsDao;
 import service.impl.StudentsDaoImpl;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,4 +40,58 @@ public class StudentsAction extends SuperAction {
         s.deleteStudents(sid);
         return "DELETE_SUCCESE";
     }
+
+    public String add() {
+        Students s = new Students();
+        s.setSname(request.getParameter("sname"));
+        s.setGender(request.getParameter("gender"));
+        s.setAddress(request.getParameter("address"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date birthday = sdf.parse(request.getParameter("birthday"));
+            s.setBirthday(birthday);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        StudentsDao dao = new StudentsDaoImpl();
+        dao.addStudents(s);
+        return "add_success";
+    }
+
+
+    //修改学生
+    public String modify() {
+        StudentsDao dao = new StudentsDaoImpl();
+
+        Students s = dao.queryStudentsBySid(request.getParameter("sid"));
+
+        request.setAttribute("modify_students", s);
+
+        return "modify_success";
+
+    }
+
+    //保存修改后的学生资料
+    public String save() {
+        StudentsDao dao = new StudentsDaoImpl();
+
+        Students s = new Students();
+        s.setSid(request.getParameter("sid"));
+        s.setSname(request.getParameter("sname"));
+        s.setGender(request.getParameter("gender"));
+        s.setAddress(request.getParameter("address"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date birthday = sdf.parse(request.getParameter("birthday"));
+            s.setBirthday(birthday);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        dao.updateStudents(s);
+
+        return "save_success";
+    }
+
 }

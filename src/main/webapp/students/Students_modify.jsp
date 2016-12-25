@@ -96,11 +96,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <table width="400" >
   <tr>
     <td width="30%">学号：</td>
-    <td><input type="text" name="sid" value='<s:property value="#session.modify_students.sid"/>'  readonly="readonly"/></td>
+    <td><input type="text" name="sid" value='<s:property value="#request.modify_students.sid"/>'  readonly="readonly"/></td>
   </tr>
   <tr>
     <td width="30%">姓名：</td>
-    <td><input type="text" name="sname" value='<s:property value="#session.modify_students.sname"/>'/></td>
+    <td><input type="text" name="sname" value='<s:property value="#request.modify_students.sname"/>'/></td>
   </tr>
   <tr>
     <td>性别：</td>
@@ -119,13 +119,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <td>出生日期：</td>
     <td><input name="birthday" type="text" id="control_date" size="20"
       maxlength="10" onclick="new Calendar().show(this);" readonly="readonly" 
-      value="<s:date name="#session.modify_students.birthday" format="yyyy-MM-dd"/>"
+      value="<s:date name="#request.modify_students.birthday" format="yyyy-MM-dd"/>"
       />
     </td>
   </tr>
   <tr>
     <td>地址：</td>
-    <td><input type="text" name="address" value='<s:property value="#session.modify_students.address"/>'/></td>
+    <td><input type="text" name="address" value='<s:property value="#request.modify_students.address"/>'/></td>
   </tr>
   <tr>
     <td colspan="2" align="center"><input class="button" type="submit" value="修改"></td>
